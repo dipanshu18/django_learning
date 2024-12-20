@@ -1,0 +1,25 @@
+{% extends 'url_shortner/layout.html' %}
+
+<span>{% block title %}Home{% endblock %}</span>
+
+{% block content %}
+<div class="max-w-xl mx-auto">
+  <ul class="w-full gap-10 grid grid-cols-1">
+    {% for link in links %}
+    <li
+      class="p-5 border border-neutral-200 hover:bg-emerald-50 rounded-lg text-neutral-800"
+    >
+      <p class="my-5">{{ link.name }} - {{ link.clicks }}</p>
+      <div class="flex items-center justify-between">
+        <p>{{link.url}}</p>
+        <a href="{% url 'route-link' link.slug %}" target="_blank"
+          ><button class="px-5 py-2 bg-emerald-500 text-neutral-50 rounded-lg">
+            Go to {{ link.slug }}
+          </button></a
+        >
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

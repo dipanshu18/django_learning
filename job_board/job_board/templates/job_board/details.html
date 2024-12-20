@@ -1,0 +1,24 @@
+{% extends "job_board/layout.html" %} {% load humanize %} {% block title %}
+{{job.title }}{% endblock %} {% block content %}
+
+<div class="p-5">
+  <a href="{% url 'home' %}">
+    <button class="px-5 py-2 bg-neutral-800 text-white rounded-md">
+      Go back
+    </button>
+  </a>
+</div>
+
+<div class="p-5 space-y-5">
+  <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-extrabold">{{ job.title | title }}</h1>
+    <h3 class="text-xl font-semi-bold">
+      Company: <span class="font-bold">{{ job.company }}</span>
+    </h3>
+  </div>
+  <p class="text-xl">{{ job.description }}</p>
+  <p class="text-lg">
+    Pay range: - <span class="font-bold">Rs. {{ job.salary | intcomma }}</span>
+  </p>
+</div>
+{% endblock %}

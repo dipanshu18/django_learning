@@ -1,0 +1,22 @@
+{% extends "job_board/layout.html" %} {% load humanize %}
+
+<span>{% block title %}Home{% endblock %} </span>{% block content %}
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
+>
+  {% for job in jobs %}
+  <div
+    class="border border-neutral-700 rounded-md p-5 bg-neutral-800 text-white"
+  >
+    <em>{{ job.title | title }}</em>
+    <h3>{{ job.company }}</h3>
+
+    <a href="{% url 'detail' job.id %}"
+      ><button class="mt-5 px-5 py-2 text-black bg-white rounded-md">
+        View Details
+      </button></a
+    >
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "movies/layout.html" %} {% block header %}
+<h1>{% block title %} Home {% endblock %}</h1>
+{% endblock %} {% block content %}
+
+<h2>My favorite streaming platforms:</h2>
+{% for platform in platforms %}
+<em>{{ platform }}{% if not forloop.last %},{% endif %}</em>
+{% endfor %}
+<h4>My favorite genre: {{ genre }}</h4>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores molestias
+  veniam consectetur accusamus optio! Natus facilis eius ullam! Et quidem id
+  unde adipisci? Debitis, a eaque enim necessitatibus eius nihil autem nobis.
+  Atque sequi, repellendus saepe odit exercitationem impedit sint aperiam
+  perspiciatis. Quae ipsum repudiandae natus doloribus minima suscipit, quaerat
+  impedit architecto sapiente pariatur expedita odio itaque cumque illo vero
+  omnis adipisci. Fugit iste natus deserunt architecto eligendi alias, ratione
+  adipisci unde necessitatibus rem quod repudiandae possimus molestiae quis
+  asperiores corporis maxime incidunt aperiam cum odio quos laudantium
+  laboriosam cupiditate. Eaque, cum! Excepturi recusandae cumque quasi aliquam?
+  Unde animi iste accusantium omnis ipsa quo id asperiores itaque inventore, ut
+  dicta explicabo quidem obcaecati fuga amet accusamus, dolor facilis nisi modi
+  qui cumque eius architecto. Ab eius adipisci eveniet consequatur officia
+  officiis possimus illo praesentium! Non natus iusto et deserunt eius molestiae
+  at, veritatis cupiditate, nostrum velit officiis a. Repudiandae
+  exercitationem, delectus nemo rem sed eveniet. Itaque laudantium, dolor iusto
+  inventore sed, optio ullam temporibus doloribus at cumque mollitia blanditiis,
+  ducimus ut voluptates accusamus veniam quasi autem? Quos, a blanditiis
+  temporibus, totam in pariatur aliquid ab omnis possimus nisi facere neque
+  beatae similique dolorem impedit? Dolore sapiente aperiam similique libero
+  reiciendis.
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat, vero nobis
+  ipsa officia excepturi. Molestiae corrupti inventore qui, facilis perspiciatis
+  non, voluptates nisi, eum accusantium mollitia distinctio doloribus hic at
+  eaque placeat. In esse asperiores eum soluta, quo fuga autem odit laboriosam!
+  Quis libero saepe perferendis harum tempora officiis!
+</p>
+{% endblock %}

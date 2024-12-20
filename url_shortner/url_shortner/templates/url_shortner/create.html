@@ -1,0 +1,57 @@
+{% extends "url_shortner/layout.html" %} {% load tailwind_filters %}
+
+<span>{% block title %}Create Link{% endblock %}</span>
+
+{% block content %}
+<div class="max-w-lg mx-auto">
+  <form
+    action=""
+    method="post"
+    class="space-y-5 border border-neutral-100 p-5 rounded-lg bg-emerald-50"
+  >
+    {% csrf_token %}
+
+    <!-- <div class="grid">
+      <label class="text-xl">Name:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter name for the url"
+        class="p-2 border rounded-lg"
+      />
+    </div>
+    <div class="grid">
+      <label class="text-xl">Url:</label>
+      <input
+        type="text"
+        name="url"
+        id="url"
+        placeholder="Enter url"
+        class="p-2 border rounded-lg"
+      />
+    </div>
+    <div class="grid">
+      <label class="text-xl">Slug(optional):</label>
+      <input
+        type="text"
+        name="slug"
+        id="slug"
+        placeholder="Enter slug for the url"
+        class="p-2 border rounded-lg"
+      />
+    </div> -->
+
+    {{ form | crispy }}
+
+    <div>
+      <button
+        type="submit"
+        class="w-full text-xl px-5 py-2 rounded-lg bg-emerald-500 text-neutral-50"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

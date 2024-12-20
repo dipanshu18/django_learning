@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A movies app built using Django for learning purpose"
+    />
+    <title>{% block title %} {% endblock %} | Movies</title>
+  </head>
+  <body style="padding: 0 5rem; scroll-behavior: smooth">
+    <nav
+      style="display: flex; align-items: center; justify-content: space-between"
+    >
+      <h1>Django Movies App</h1>
+
+      <ul
+        style="display: flex; list-style: none; align-items: center; gap: 10px"
+      >
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+      </ul>
+    </nav>
+
+    {% block header %} {% endblock %} {% block content %} {% endblock %}
+  </body>
+</html>

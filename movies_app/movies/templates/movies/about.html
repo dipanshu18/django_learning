@@ -1,0 +1,22 @@
+{% extends "movies/layout.html" %} {% block header %}
+<h1>{% block title %} About us {% endblock %}</h1>
+{% endblock %} {% block content %} {% load static %}
+<img
+  style="width: 200px"
+  src="{% static 'movies/main-profile.jpg' %}"
+  alt="My profile headshot"
+/>
+<p>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad repellat ratione
+  explicabo architecto esse necessitatibus saepe minima nam voluptatum
+  asperiores ea excepturi optio ipsam accusamus quasi impedit mollitia cumque
+  cum voluptatibus facilis corporis sequi, voluptas amet sint. Deleniti ipsum
+  cumque velit ducimus sunt provident optio vitae laboriosam, beatae nemo vero
+  ex placeat enim. Sunt velit molestias consectetur voluptates. Facere similique
+  quam dicta officiis impedit blanditiis maiores nulla consequuntur ratione.
+  Perferendis nobis nam tenetur aspernatur fugit culpa praesentium repellendus,
+  deserunt natus necessitatibus maiores voluptates iusto earum ipsa fugiat in
+  quae recusandae exercitationem sint alias inventore voluptatum! Odit rerum
+  iusto maiores placeat.
+</p>
+{% endblock %}
