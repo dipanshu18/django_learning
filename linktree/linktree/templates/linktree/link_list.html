@@ -1,0 +1,59 @@
+{% extends "linktree/layout.html" %}
+
+<span>{% block title %} Your Links {% endblock %}</span>
+
+{% block content %}
+<h1 class="text-center text-xl font-extrabold my-5">Your Links</h1>
+
+<table class="w-full table-auto border-collapse rounded-md overflow-hidden">
+  <thead class="bg-gray-100 text-gray-700 uppercase text-sm font-medium">
+    <tr class="">
+      <th class="px-4 py-4 text-left">Name</th>
+      <th class="px-4 py-4 text-left">Url</th>
+      <th class="px-4 py-4 text-left">Profile</th>
+      <th class="px-4 py-4 text-center"></th>
+      <th class="px-4 py-4 text-center"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for link in object_list %}
+    <tr class="bg-white hover:bg-gray-100">
+      <td class="px-4 py-2">{{ link.name }}</td>
+      <td class="px-4 py-2">
+        <a href="{{link.url}}" target="_blank">{{ link.url }}</a>
+      </td>
+      <td class="px-4 py-2">{{ link.profile_id }}</td>
+      <td class="px-4 py-2 text-center">
+        <a href="{% url 'update-link' link.id %}">
+          <button
+            class="px-3 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded"
+          >
+            Edit
+          </button>
+        </a>
+      </td>
+      <td class="px-4 py-2 text-center">
+        <a href="{% url 'delete-link' link.id %}">
+          <button
+            class="px-3 py-1 bg-red-300 hover:bg-red-600 text-white rounded"
+          >
+            Delete
+          </button>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="my-5">
+  <a href="{% url 'add-link' %}">
+    <button
+      class="w-full py-2 bg-gray-500 text-white hover:bg-gray-600 rounded-md"
+    >
+      Add new link +
+    </button>
+  </a>
+</div>
+
+{% endblock %}

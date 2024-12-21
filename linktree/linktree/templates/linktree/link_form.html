@@ -1,0 +1,15 @@
+{% extends "linktree/layout.html" %} {% load tailwind_filters %}
+
+<span>{% block title %}Add new link{% endblock %}</span>
+{% block content %}
+<h1 class="text-center text-xl font-extrabold my-5">Link Form</h1>
+<form action="" method="post">
+  {% csrf_token %} {{ form | crispy }}
+  <button
+    type="submit"
+    class="w-full py-2 bg-gray-500 text-white hover:bg-gray-600 rounded-md"
+  >
+    Submit
+  </button>
+</form>
+{% endblock %}

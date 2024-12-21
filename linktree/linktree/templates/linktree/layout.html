@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="linktree clone using django class based views"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>{% block title %}{% endblock %} | Linktree</title>
+  </head>
+  <body class="max-w-3xl mx-auto">
+    <nav class="border-b-2 w-full py-3 flex items-center justify-between">
+      <a href="{% url 'link-list' %}"><h1 class="font-bold">🌳 Linktree</h1></a>
+      <a href="{% url 'add-link' %}"
+        ><button
+          class="py-2 px-4 bg-gray-500 hover:bg-gray-600 rounded-md text-white"
+        >
+          Add Link +
+        </button></a
+      >
+    </nav>
+
+    <main class="py-2">{% block content %} {% endblock %}</main>
+  </body>
+</html>
