@@ -1,0 +1,19 @@
+{% extends "trip/layout.html" %} {% load tailwind_filters %}
+
+<span>{% block title %}Logged out{% endblock %}</span>
+
+{% block content %}
+<h1 class="text-center text-rose-600 text-xl font-bold my-5">
+  You've been logged out
+</h1>
+
+<div class="w-full max-w-xs mx-auto">
+  <a href="{% url 'login' %}" class="w-full">
+    <button
+      class="px-5 min-w-full py-2 rounded-md bg-rose-500 hover:bg-rose-600 text-white"
+    >
+      Login here
+    </button>
+  </a>
+</div>
+{% endblock %}

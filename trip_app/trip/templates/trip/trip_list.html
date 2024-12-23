@@ -1,0 +1,31 @@
+{% extends "trip/layout.html" %}
+
+<span>{% block title %}My Trips{% endblock %}</span>
+
+{% block content %}
+<div class="h-full">
+  {% if trips %}
+  <div class="my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {% for trip in trips %}
+    <a href="{% url 'trip-detail' trip.id %}">
+      <div
+        class="space-y-2 border border-rose-50 shadow-md shadow-rose-50 p-5 rounded-md transition-all duration-300 hover:bg-rose-100"
+      >
+        <h1 class="font-bold text-xl text-rose-950">
+          {{ trip.city }} | {{ trip.country }}
+        </h1>
+        <p class="text-rose-900">
+          {% if trip.start_date and trip.end_date %}{{trip.start_date}} to
+          {{trip.end_date}} {% else %}TBA - TBA{% endif %}
+        </p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <h1 class="text-4xl text-center my-10 text-rose-600 font-semibold">
+    No trips added yet
+  </h1>
+  {% endif %}
+</div>
+{% endblock %}

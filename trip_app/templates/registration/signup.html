@@ -1,0 +1,17 @@
+{% extends "trip/layout.html" %} {% load tailwind_filters %}
+
+<span>{% block title %}Signup{% endblock %}</span>
+
+{% block content %}
+<h1 class="text-center text-xl text-rose-900 font-bold my-5">Signup</h1>
+<form action="{% url 'signup' %}" method="post" class="max-w-md mx-auto">
+  {% csrf_token %} {{form | crispy}}
+
+  <button
+    type="submit"
+    class="px-5 py-2 w-full rounded-md transition-all duration-300 bg-rose-500 hover:bg-rose-600 text-white"
+  >
+    Register
+  </button>
+</form>
+{% endblock %}

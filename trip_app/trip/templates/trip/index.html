@@ -1,0 +1,58 @@
+{% extends "trip/layout.html" %}
+<span>{% block title %}Home{% endblock %}</span> {% block content %}
+<div class="md:h-[70vh] flex flex-col items-center justify-center">
+  <!-- Hero Section -->
+  <header class="text-center">
+    <h1 class="text-5xl font-extrabold text-rose-600 mb-4">
+      Welcome to Trip Tracker
+    </h1>
+    <p class="text-lg text-rose-500">
+      Effortlessly organize, and cherish your travel memories.
+    </p>
+  </header>
+
+  <!-- Call to Action -->
+  <div class="mt-8 flex flex-wrap gap-10 items-center justify-center">
+    <a
+      href="{% url 'trip-list' %}"
+      class="px-6 py-3 bg-rose-500 text-white font-bold text-lg rounded-md shadow-lg shadow-rose-50 hover:bg-rose-600 transition-all"
+    >
+      View Your Trips
+    </a>
+    <a
+      href="{% url 'add-trip' %}"
+      class="px-6 py-3 bg-white text-rose-500 font-bold text-lg border border-rose-500 rounded-md hover:bg-rose-100 transition-all"
+    >
+      Add a New Trip
+    </a>
+  </div>
+
+  <!-- Features Section -->
+  <section class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      class="p-6 bg-white rounded-lg shadow-md shadow-rose-50 hover:shadow-xl hover:shadow-rose-100 transition-all"
+    >
+      <h3 class="text-rose-600 text-xl font-semibold mb-2">Track Your Trips</h3>
+      <p class="text-rose-900">
+        Keep a record of all your travels and experiences in one place.
+      </p>
+    </div>
+    <div
+      class="p-6 bg-white rounded-lg shadow-md shadow-rose-50 hover:shadow-xl hover:shadow-rose-100 transition-all"
+    >
+      <h3 class="text-rose-600 text-xl font-semibold mb-2">Add Notes</h3>
+      <p class="text-rose-900">
+        Save notes and photos for each trip to preserve your memories.
+      </p>
+    </div>
+    <div
+      class="p-6 bg-white rounded-lg shadow-md shadow-rose-50 hover:shadow-xl hover:shadow-rose-100 transition-all"
+    >
+      <h3 class="text-rose-600 text-xl font-semibold mb-2">Easy Navigation</h3>
+      <p class="text-rose-900">
+        Quickly access your trips and manage them effortlessly.
+      </p>
+    </div>
+  </section>
+</div>
+{% endblock %}
